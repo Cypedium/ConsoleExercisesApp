@@ -43,6 +43,9 @@ namespace ConsoleExercisesApp
                         case 6:
                             RunExerciseSix();
                             break;
+                        case 7:
+                            RunExerciseSeven();
+                            break;
                         // Add new cases as you progress with your exercises
 
                         case -1:
@@ -73,7 +76,7 @@ namespace ConsoleExercisesApp
         {
             string firstName = "Mikael";
             string lastName = "Aurell";
-           Console.WriteLine($"Hello {firstName} {lastName}! I’m glad to inform you that you are the test \tsubject ofmy very first assignment!");
+            Console.WriteLine($"Hello {firstName} {lastName}! I’m glad to inform you that you are the test \tsubject ofmy very first assignment!");
         }
 
         private static void RunExerciseTwo()
@@ -99,12 +102,12 @@ namespace ConsoleExercisesApp
             //The quick fox Jumped Over the DOG
 
             string myText = "The brown fox jumped over the lazy dog";
-            string subTemp =  myText.Substring(0, 3); //The
+            string subTemp = myText.Substring(0, 3); //The
             string subTemp2 = myText.Substring(10, 19); //fox jumped over the
             subTemp2 = subTemp2.Replace(subTemp2, "fox Jumped over the");
-            string subTemp3 =  myText.Substring(35); //dog
-            subTemp3 = subTemp3.ToUpper(); 
-            string subTemp4 = subTemp.Insert(3," quick");
+            string subTemp3 = myText.Substring(35); //dog
+            subTemp3 = subTemp3.ToUpper();
+            string subTemp4 = subTemp.Insert(3, " quick");
             myText = subTemp4.Insert(9, $" {subTemp2}");
             myText = myText.Insert(29, $" {subTemp3}");
             Console.WriteLine(myText);
@@ -145,6 +148,18 @@ namespace ConsoleExercisesApp
                 Console.WriteLine($"The biggest value is {b} and the smallest is {a}.");
                 Console.WriteLine($"a+b={addition} a-b={subtraktion} a*b={multi} a/b={divi}.{divirest}");
             }
+        }
+        private static void RunExerciseSeven()
+        {
+            Console.WriteLine("Type a radius: ");
+            string myradius = Console.ReadLine();
+            double myradiusDub = double.Parse(myradius);
+            double area = 2 * Math.PI * Math.Pow(myradiusDub,2);
+            double volume = 4 * Math.PI * Math.Pow(myradiusDub,3);
+            volume = volume / 3;
+            area = Math.Round(area, 1);
+            volume = Math.Round(volume, 1);
+            Console.WriteLine($"Your area is:{area} and your volume is:{volume}");
         }
     }
 }
