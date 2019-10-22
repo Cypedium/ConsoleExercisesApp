@@ -40,6 +40,9 @@ namespace ConsoleExercisesApp
                         case 5:
                             RunExerciseFive();
                             break;
+                        case 6:
+                            RunExerciseSix();
+                            break;
                         // Add new cases as you progress with your exercises
 
                         case -1:
@@ -112,13 +115,36 @@ namespace ConsoleExercisesApp
         {
             string stringstr = "Arrays are very common in programming, they look something like: [1,2,3,4,5]";
             string newstring = stringstr.Substring(65, 10);
-            Console.WriteLine(newstring);
             string first = newstring.Substring(0, 3);
             string last = newstring.Substring(7, 3);
             newstring = first.Insert(3, $"{last}");
             newstring = newstring.Insert(6, ",6,7,8,9,10]");
             Console.WriteLine(newstring);
 
+        }
+        private static void RunExerciseSix()
+        {
+            Console.WriteLine("Type a number");
+            string astring = Console.ReadLine();
+            Console.WriteLine("Type a number");
+            string bstring = Console.ReadLine();
+            int a = int.Parse(astring);
+            int b = int.Parse(bstring);
+            int addition = a + b;
+            int subtraktion = a - b;
+            int multi = a * b;
+            int divi = a / b;
+            int divirest = a % b;
+            if (a > b)
+            {
+                Console.WriteLine($"The biggest value is {a} and the smallest is {b}.");
+                Console.WriteLine($"a+b={addition} a-b={subtraktion} a*b={multi} a/b={divi}.{divirest}");
+            }
+            else
+            {
+                Console.WriteLine($"The biggest value is {b} and the smallest is {a}.");
+                Console.WriteLine($"a+b={addition} a-b={subtraktion} a*b={multi} a/b={divi}.{divirest}");
+            }
         }
     }
 }
