@@ -36,6 +36,10 @@ namespace ConsoleExercisesApp
                         case 4:
                             RunExerciseFour();
                             break;
+
+                        case 5:
+                            RunExerciseFive();
+                            break;
                         // Add new cases as you progress with your exercises
 
                         case -1:
@@ -48,10 +52,11 @@ namespace ConsoleExercisesApp
                             break;
                     }
                 }
-                catch
+                catch (Exception e)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("A exception has occurred!\nIt can be that you inputed somthing other then a number in the menu or the assigment you were running has a flaw");
+                    //Console.WriteLine("A exception has occurred!\nIt can be that you inputed somthing other then a number in the menu or the assigment you were running has a flaw");
+                    Console.WriteLine(e);
                 }
 
                 Console.ResetColor();
@@ -63,14 +68,16 @@ namespace ConsoleExercisesApp
 
         private static void RunExerciseOne()
         {
-            string firstName;
-            string lastName;
-           Console.WriteLine("Hello <firstName> <lastName>! I’m glad to inform you that you are the test \tsubject ofmy very first assignment!");
+            string firstName = "Mikael";
+            string lastName = "Aurell";
+           Console.WriteLine($"Hello {firstName} {lastName}! I’m glad to inform you that you are the test \tsubject ofmy very first assignment!");
         }
 
         private static void RunExerciseTwo()
         {
-            Console.WriteLine("The second Exercise");
+            DateTime value = new DateTime(2019, 10, 22);
+            Console.WriteLine(value);
+            Console.WriteLine(value == DateTime.Today);
         }
 
         private static void RunExerciseThree()
@@ -87,20 +94,31 @@ namespace ConsoleExercisesApp
         private static void RunExerciseFour()
         {
             //The quick fox Jumped Over the DOG
-            string myText;
-            string subTemp;
-            string subTemp2;
-            string subTemp3;
-            string subTemp4 = "quick";
-            Console.WriteLine("Write your text here: "); //The brown fox jumped over the lazy dog
-            myText = Console.ReadLine();
-            subTemp =  myText.Substring(0, 3); //The
-            //Console.WriteLine($"{subTemp}");
-            subTemp2 = myText.Substring(10, 19); //fox jumped over the
-            //Console.WriteLine($"{subTemp2}");
-            subTemp3 =  myText.Substring(35); //dog
-           // Console.WriteLine($"{subTemp3}");
-            Console.WriteLine($"{subTemp} {subTemp4} {subTemp2} {subTemp3}");
+
+            string myText = "The brown fox jumped over the lazy dog";
+            string subTemp =  myText.Substring(0, 3); //The
+            string subTemp2 = myText.Substring(10, 19); //fox jumped over the
+            subTemp2 = subTemp2.Replace(subTemp2, "fox Jumped over the");
+            string subTemp3 =  myText.Substring(35); //dog
+            subTemp3 = subTemp3.ToUpper(); 
+            string subTemp4 = subTemp.Insert(3," quick");
+            myText = subTemp4.Insert(9, $" {subTemp2}");
+            myText = myText.Insert(29, $" {subTemp3}");
+            Console.WriteLine(myText);
+            //Console.WriteLine($"{subTemp4} {subTemp2} {subTemp3}");
+
+        }
+        private static void RunExerciseFive()
+        {
+            string stringstr = "Arrays are very common in programming, they look something like: [1,2,3,4,5]";
+            string newstring = stringstr.Substring(65, 10);
+            Console.WriteLine(newstring);
+            string first = newstring.Substring(0, 3);
+            string last = newstring.Substring(7, 3);
+            newstring = first.Insert(3, $"{last}");
+            newstring = newstring.Insert(6, ",6,7,8,9,10]");
+            Console.WriteLine(newstring);
+
         }
     }
 }
