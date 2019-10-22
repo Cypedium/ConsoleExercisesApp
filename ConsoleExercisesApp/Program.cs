@@ -86,12 +86,21 @@ namespace ConsoleExercisesApp
 
         private static void RunExerciseFour()
         {
-             //The quick fox Jumped Over the DOG
+            //The quick fox Jumped Over the DOG
             string myText;
             string subTemp;
-            myText = Console.WriteLine("Write your text here: "); //The brown fox jumped over the lazy dog
-            subTemp = input.substring(0, 3);
-
+            string subTemp2;
+            string subTemp3;
+            string subTemp4 = "quick";
+            Console.WriteLine("Write your text here: "); //The brown fox jumped over the lazy dog
+            myText = Console.ReadLine();
+            subTemp =  myText.Substring(0, 3); //The
+            //Console.WriteLine($"{subTemp}");
+            subTemp2 = myText.Substring(10, 19); //fox jumped over the
+            //Console.WriteLine($"{subTemp2}");
+            subTemp3 =  myText.Substring(35); //dog
+           // Console.WriteLine($"{subTemp3}");
+            Console.WriteLine($"{subTemp} {subTemp4} {subTemp2} {subTemp3}");
         }
     }
 }
