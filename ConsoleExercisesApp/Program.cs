@@ -49,6 +49,9 @@ namespace ConsoleExercisesApp
                         case 8:
                             RunExerciseEight();
                             break;
+                        case 9:
+                            RunExerciseNine();
+                            break;
                         // Add new cases as you progress with your exercises
 
                         case -1:
@@ -181,5 +184,59 @@ namespace ConsoleExercisesApp
             Console.WriteLine($"{myNumberSqr} {myNumber_2} {myNumber_10}");
 
         }
+        private static void RunExerciseNine()
+        {
+            Console.Write("Write your name: ");
+            string myNameStr = Console.ReadLine();
+            Console.Write($"Welcome {myNameStr}. Vilket år är du född? ");
+            string myYearStr = Console.ReadLine();
+            int myYear = int.Parse(myYearStr);
+            int thisYear = DateTime.Now.Year;
+            int myAge = thisYear - myYear;
+            string ja = "ja";
+            string Ja = "Ja";
+            //string nej = "Nej";
+
+            if (myAge > 17)
+            {
+                string beer = AskUserFor("Vill du ha en öl? (Ja/Nej)");
+                if (beer == ja || beer == Ja)
+                {
+                    Console.WriteLine("Order a beer");
+                }
+                else
+                {
+                    string fanta = AskUserFor("Vill du ha en fanta? (Ja/Nej)");
+                    if (fanta == ja || fanta == Ja)
+                    {
+                        Console.WriteLine("Order a Fanta");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Inga fler val");
+                    }
+                }
+            }
+            
+            else
+            {
+                string fanta = AskUserFor("Vill du ha en fanta? (Ja/Nej)");
+                if (fanta == ja || fanta == Ja)
+                {
+                    Console.WriteLine("Order a Fanta");
+                }
+
+                else
+                {
+                    Console.WriteLine("Inga fler val");
+                }
+            }
+        }
+            static string AskUserFor(string forWhat)
+            {
+                Console.Write($"{forWhat}: ");
+                return Console.ReadLine();
+            }
     }
 }
