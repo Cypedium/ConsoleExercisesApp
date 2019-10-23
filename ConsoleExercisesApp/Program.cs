@@ -46,6 +46,9 @@ namespace ConsoleExercisesApp
                         case 7:
                             RunExerciseSeven();
                             break;
+                        case 8:
+                            RunExerciseEight();
+                            break;
                         // Add new cases as you progress with your exercises
 
                         case -1:
@@ -154,12 +157,29 @@ namespace ConsoleExercisesApp
             Console.WriteLine("Type a radius: ");
             string myradius = Console.ReadLine();
             double myradiusDub = double.Parse(myradius);
-            double area = 2 * Math.PI * Math.Pow(myradiusDub,2);
-            double volume = 4 * Math.PI * Math.Pow(myradiusDub,3);
+            double area = 2 * Math.PI * Math.Pow(myradiusDub, 2);
+            double volume = 4 * Math.PI * Math.Pow(myradiusDub, 3);
             volume = volume / 3;
             area = Math.Round(area, 1);
             volume = Math.Round(volume, 1);
             Console.WriteLine($"Your area is:{area} and your volume is:{volume}");
+        }
+
+        private static void RunExerciseEight()
+        {
+            Console.WriteLine("Type a number: ");
+            string myNumberString = Console.ReadLine();
+            
+            double myNumber = double.Parse(myNumberString);
+            double myNumberSqr = Math.Sqrt(myNumber);
+            double myNumber_2 = Math.Pow(myNumber, 2);
+            double myNumber_10 = Math.Pow(myNumber, 10);
+            
+            myNumberSqr = Math.Round(myNumberSqr, 1);
+            myNumber_2 = Math.Round(myNumber_2, 1);
+            myNumber_10 = Math.Round(myNumber_10, 1);
+            Console.WriteLine($"{myNumberSqr} {myNumber_2} {myNumber_10}");
+
         }
     }
 }
