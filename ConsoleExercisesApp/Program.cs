@@ -52,6 +52,9 @@ namespace ConsoleExercisesApp
                         case 9:
                             RunExerciseNine();
                             break;
+                        case 10:
+                            RunExerciseTen();
+                            break;
                         // Add new cases as you progress with your exercises
 
                         case -1:
@@ -120,6 +123,7 @@ namespace ConsoleExercisesApp
             //Console.WriteLine($"{subTemp4} {subTemp2} {subTemp3}");
 
         }
+
         private static void RunExerciseFive()
         {
             string stringstr = "Arrays are very common in programming, they look something like: [1,2,3,4,5]";
@@ -131,6 +135,7 @@ namespace ConsoleExercisesApp
             Console.WriteLine(newstring);
 
         }
+
         private static void RunExerciseSix()
         {
             Console.WriteLine("Type a number");
@@ -155,6 +160,7 @@ namespace ConsoleExercisesApp
                 Console.WriteLine($"a+b={addition} a-b={subtraktion} a*b={multi} a/b={divi}.{divirest}");
             }
         }
+
         private static void RunExerciseSeven()
         {
             Console.WriteLine("Type a radius: ");
@@ -184,6 +190,7 @@ namespace ConsoleExercisesApp
             Console.WriteLine($"{myNumberSqr} {myNumber_2} {myNumber_10}");
 
         }
+
         private static void RunExerciseNine()
         {
             Console.Write("Write your name: ");
@@ -193,6 +200,7 @@ namespace ConsoleExercisesApp
             int myYear = int.Parse(myYearStr);
             int thisYear = DateTime.Now.Year;
             int myAge = thisYear - myYear;
+            //char ja = Console.ReadKey(true).KeyChar;
             string ja = "ja";
             string Ja = "Ja";
             //string nej = "Nej";
@@ -233,10 +241,72 @@ namespace ConsoleExercisesApp
                 }
             }
         }
-            static string AskUserFor(string forWhat)
+        
+        /*private static void RunExerciseTen()
+        {
+            char a = Console.ReadKey(true).KeyChar;
+
+            Console.WriteLine("was pressed: " + a);
+        }*/
+        private static void RunExerciseTen()
+        {
+            bool keepAlive2 = true;
+            while (keepAlive2)
             {
-                Console.Write($"{forWhat}: ");
-                return Console.ReadLine();
+                 try
+                    { 
+
+                    Console.Write("Enter assigment number 1,2 or 3. ( or -1 to exit )\nSelect: ");
+                    int selectionNumber = int.Parse(Console.ReadLine() ?? "");
+                    Console.ForegroundColor = ConsoleColor.Green;
+
+                    switch (selectionNumber)
+                    {
+                        case 1:
+                            int a = int.Parse(Console.ReadLine());
+                            int b = int.Parse(Console.ReadLine());
+                            if (a != 0 && b != 0)
+                            {
+                                Console.WriteLine($"{a / b}");
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("The number can't be 0");
+                            }
+                            break;
+                        case 2:
+                            RunExerciseFour();
+                            break;
+                        case 3:
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("HEJ");
+                            Console.ResetColor();
+                            break;
+                        case -1:
+                            keepAlive2 = false;
+                            break;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    //Console.WriteLine("A exception has occurred!\nIt can be that you inputed somthing other then a number in the menu or the assigment you were running has a flaw");
+                    Console.WriteLine(e);
+                }
+
+                Console.ResetColor();
+                Console.WriteLine("Press any key to continue.");
+                Console.ReadKey(true);
+                Console.Clear();
             }
+        }    
+        static string AskUserFor(string forWhat)
+        {
+             Console.Write($"{forWhat}: ");
+             return Console.ReadLine();
+           
+            //return Console.ReadKey(true).KeyChar;
+        }
     }
 }
