@@ -55,6 +55,9 @@ namespace ConsoleExercisesApp
                         case 10:
                             RunExerciseTen();
                             break;
+                        case 11:
+                            RunExerciseEleven();
+                            break;
                         // Add new cases as you progress with your exercises
 
                         case -1:
@@ -249,6 +252,7 @@ namespace ConsoleExercisesApp
             Console.WriteLine("was pressed: " + a);
         }*/
         private static void RunExerciseTen()
+
         {
             bool keepAlive2 = true;
             while (keepAlive2)
@@ -301,6 +305,49 @@ namespace ConsoleExercisesApp
                 Console.Clear();
             }
         }    
+        private static void RunExerciseEleven()
+        {
+            Console.Write("Pick a number ");
+            int a = int.Parse(Console.ReadLine());
+            
+            if (a != 0)
+            {
+                a = a + 1;
+                for (int i = 0; i < a; i++)
+                {
+                    int rest = i % 2;
+                    if (rest != 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(i);
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(i);
+                    }
+                }
+                for (int i = a - 1; i >= 0; i--)
+                {
+                    int rest = i % 2;
+                    if (rest != 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(i);
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(i);
+                    }
+                }
+            }
+
+            else
+            {
+                Console.WriteLine("The number can't be 0");
+            }
+        }
         static string AskUserFor(string forWhat)
         {
              Console.Write($"{forWhat}: ");
