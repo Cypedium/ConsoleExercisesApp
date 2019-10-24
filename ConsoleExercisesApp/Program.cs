@@ -58,6 +58,9 @@ namespace ConsoleExercisesApp
                         case 11:
                             RunExerciseEleven();
                             break;
+                        case 12:
+                            RunExcersieTwelve();
+                            break;
                         // Add new cases as you progress with your exercises
 
                         case -1:
@@ -348,6 +351,19 @@ namespace ConsoleExercisesApp
                 Console.WriteLine("The number can't be 0");
             }
         }
+        
+        private static void RunExcersieTwelve()
+        {
+            for (int i = 1; i < 11; i++)
+            {
+                Console.WriteLine();
+                for (int x = 1; x < 11; x++)
+                {
+                    Console.Write($"{i*x}\t");
+                }
+            }
+        }
+
         static string AskUserFor(string forWhat)
         {
              Console.Write($"{forWhat}: ");
