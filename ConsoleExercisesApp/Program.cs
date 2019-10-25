@@ -69,6 +69,12 @@ namespace ConsoleExercisesApp
                         case 14:
                             RunExcersise14();
                             break;
+                        case 15:
+                            RunExersise15();
+                            break;
+                        case 16:
+                            RunExersise16();
+                            break;
                         // Add new cases as you progress with your exercises
 
                         case -1:
@@ -417,7 +423,48 @@ namespace ConsoleExercisesApp
             Console.WriteLine($"The average is: {result} and the sum is: {sumList}.");
 
         }
-        
+
+        private static void RunExersise15()
+        {
+            int number = int.Parse(AskUserFor("Type a number"));
+
+            for (int i = number - 1; i > 0; i--)
+            {
+               int rest = number % i;
+                if (rest == 0)
+                {
+                    Console.Write($"{i} ");
+
+                }
+                else
+                {
+                  ;
+                }
+            }
+        }
+
+        private static void RunExersise16()
+        {
+            int number = int.Parse(AskUserFor("Type a number"));
+            int sum =0;
+            for (int i = number - 1; i > 0; i--)
+            {
+                int rest = number % i;
+               
+                if (rest == 0)
+                {
+                    Console.Write($"{i} ");
+                    sum=sum+i;
+                    if (sum == number)
+                    {
+                        Console.WriteLine($"The {number} is a perfect number");
+                    }
+                }
+                
+            }
+        }
+
+
         static string AskUserFor(string forWhat)
         {
              Console.Write($"{forWhat}: ");
