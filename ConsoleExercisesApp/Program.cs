@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleExercisesApp
 {
@@ -60,6 +62,12 @@ namespace ConsoleExercisesApp
                             break;
                         case 12:
                             RunExcersieTwelve();
+                            break;
+                        case 13:
+                            RunExcersie13();
+                            break;
+                        case 14:
+                            RunExcersise14();
                             break;
                         // Add new cases as you progress with your exercises
 
@@ -248,12 +256,6 @@ namespace ConsoleExercisesApp
             }
         }
         
-        /*private static void RunExerciseTen()
-        {
-            char a = Console.ReadKey(true).KeyChar;
-
-            Console.WriteLine("was pressed: " + a);
-        }*/
         private static void RunExerciseTen()
 
         {
@@ -363,7 +365,59 @@ namespace ConsoleExercisesApp
                 }
             }
         }
+        private static void RunExcersie13()
+        {
+            var random = new Random();
+            int result = random.Next(1, 500);
+            int myTal = 0;
+            int antalförsök = 1;
+            Console.WriteLine("Gissa ett tal mellan 1 och 500");
+            myTal = int.Parse(Console.ReadLine());
+            while (myTal != result)
+            {
+                antalförsök = antalförsök + 1;
+                if (myTal < result)
+                {
+                    Console.WriteLine("Talet är större");
+                }
+                else
+                {
+                    Console.WriteLine("Talet är mindre");
+                }
+                Console.WriteLine("Gissa igen ett tal mellan 1 och 500");
+                myTal = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine($"Grattis! Du gissade rätt! Talet var {myTal} och {antalförsök} antal försök");
+        }
 
+        private static void RunExcersise14()
+        {
+            var numberFromUser = new List<double>();
+            double dataInput = 0;
+            double sumInput = 0;
+            
+            while (dataInput != -1)
+            {
+                Console.WriteLine("Add a number");
+                dataInput = double.Parse(Console.ReadLine());
+                
+                if (dataInput ==-1)
+                    {
+                    ;
+                }
+                else
+                {
+                    numberFromUser.Add(dataInput);
+                    sumInput = sumInput + 1;
+                }
+                
+            }
+            double result = (numberFromUser.Sum()) / sumInput;
+            double sumList = numberFromUser.Sum();
+            Console.WriteLine($"The average is: {result} and the sum is: {sumList}.");
+
+        }
+        
         static string AskUserFor(string forWhat)
         {
              Console.Write($"{forWhat}: ");
