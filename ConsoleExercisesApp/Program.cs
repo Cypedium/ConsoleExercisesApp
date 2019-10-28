@@ -495,15 +495,16 @@ namespace ConsoleExercisesApp
             {
                 charword.Add(char.Parse(aWord.Substring(i, 1)));
             }
-            for (int x = aWord.Length-1; x == 0 ; x--)
+            for (int x = aWord.Length-1; x >= 0 ; x--)
             {
-                charword2.Add(charword[aWord.Length-1]);
+                charword2.Add(charword[x]);
             }
             for (int y = 0; y < aWord.Length; y++)
             {
-                Console.WriteLine($"{y}={charword2[y]}");
-                Console.WriteLine($"{aWord}");
+                Console.Write($"{charword2[y]}");
             }
+            Console.WriteLine($" {aWord}");
+
         }
 //for (int i = 0; i < names.length; i++)
 
