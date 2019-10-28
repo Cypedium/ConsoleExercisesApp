@@ -75,6 +75,12 @@ namespace ConsoleExercisesApp
                         case 16:
                             RunExersise16();
                             break;
+                        case 17:
+                            RunExersise17();
+                            break;
+                        case 18:
+                            RunExersise18();
+                            break;
                         // Add new cases as you progress with your exercises
 
                         case -1:
@@ -398,7 +404,7 @@ namespace ConsoleExercisesApp
 
         private static void RunExcersise14()
         {
-            var numberFromUser = new List<double>();
+            List<double> numberFromUser = new List<double>();
             double dataInput = 0;
             double sumInput = 0;
             
@@ -456,6 +462,7 @@ namespace ConsoleExercisesApp
                     Console.Write($"{i} ");
                     sum=sum+i;
                     if (sum == number)
+
                     {
                         Console.WriteLine($"The {number} is a perfect number");
                     }
@@ -464,6 +471,41 @@ namespace ConsoleExercisesApp
             }
         }
 
+        private static void RunExersise17()
+        {
+            int number = int.Parse(AskUserFor("Type a number"));
+            
+            Console.WriteLine("0");
+            List<int> pSerie = new List<int>() {0, 1 };
+            
+            for (int i = 0; i < number; i++)
+            {
+                int newvalue = pSerie[i] + pSerie[i + 1];
+                pSerie.Add(newvalue);
+                Console.WriteLine($"{i}={pSerie[i]}");               
+            }
+        }
+
+        private static void RunExersise18()
+        {
+            string aWord = (AskUserFor("Enter a word to check"));
+            List<char> charword = new List<char>();
+            List<char> charword2 = new List<char>();
+            for (int i = 0; i < aWord.Length; i++)
+            {
+                charword.Add(char.Parse(aWord.Substring(i, 1)));
+            }
+            for (int x = aWord.Length-1; x == 0 ; x--)
+            {
+                charword2.Add(charword[aWord.Length-1]);
+            }
+            for (int y = 0; y < aWord.Length; y++)
+            {
+                Console.WriteLine($"{y}={charword2[y]}");
+                Console.WriteLine($"{aWord}");
+            }
+        }
+//for (int i = 0; i < names.length; i++)
 
         static string AskUserFor(string forWhat)
         {
